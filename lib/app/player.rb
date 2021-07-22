@@ -1,10 +1,11 @@
 class Player
-  attr_accessor :name, :symbol
+  attr_accessor :name, :symbol, :victory
   @@symbols = %w(❌ ⭕)
 
   def initialize(name)
     @name = name
     choose_symbol
+    @victory = 0
   end
 
   def menu_symbol

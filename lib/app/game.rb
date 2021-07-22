@@ -14,7 +14,7 @@ class Game
     @morpion = Board.new
     winner = turn(@players)
     Show.new(@morpion)
-    winner == "draw" ? draw_message() :  winner_message(winner) #winner ocntiens toujours "draw" OU un l'object de la classe player qui a gagné la partie
+    winner == "draw" ? draw_message() :  winner_message(winner) #winner contient toujours "draw" OU l'object de la classe player qui a gagné la partie
   end
   
   def turn(players)
@@ -23,8 +23,8 @@ class Game
       puts "#{player.name} A votre tour"
       menu(player)
       #break de fin de partie
-      return "draw" if @morpion.draw?()
       return player if win?()
+      return "draw" if @morpion.draw?()
     end
     turn(players)
   end
@@ -113,6 +113,7 @@ class Game
   end
 
   def winner_message(winner)
+    winner.victory += 1
     puts "#{winner.name} a gagné!"
   end
 

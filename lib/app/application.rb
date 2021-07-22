@@ -58,6 +58,7 @@ class Application
 
   def endgame
     puts "affichez les scores"
-
+    puts "#{@@players[0].name}:#{@@players[0].victory}"
+    puts "#{@@players[1].name}:#{@@players[1].victory}"
   end
 end
